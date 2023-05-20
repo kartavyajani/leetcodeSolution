@@ -1,0 +1,18 @@
+	  public boolean isPalindrome(String s) {
+	        s = s.toLowerCase();
+    StringBuilder b = new StringBuilder();
+    for (int i = 0; i < s.length(); i++) {
+        char ch = s.charAt(i);
+        if (Character.isDigit(ch) || Character.isLetter(ch)) {
+            b.append(ch);
+        }
+    }
+
+    int lastLength = b.length() - 1;
+    for (int i = 0; i < b.length() / 2; i++) {
+        if (b.charAt(i) != b.charAt(lastLength - i)) {
+            return false;
+        }
+    }
+    return true;
+	    }
